@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>HM4_Currency Converter</title>
+    </h:head>
+    <h:body>
+        <center>
+        <h:form>
+            <h3>Currency Converter</h3>
+            <h:inputText  size="20"  id="inputMoney" value="#{CurrencyManager.inputMoney}"> </h:inputText>
+        <h:selectOneMenu id="fromList" value="#{CurrencyManager.fromCurrencyString}">
+            <f:selectItems value="#{CurrencyManager.currencyList}" />
+        </h:selectOneMenu> 
+            
+        <h:selectOneMenu id="toList" value="#{CurrencyManager.toCurrencyString}">
+            <f:selectItems value="#{CurrencyManager.currencyList}" />
+        </h:selectOneMenu>
+            
+            <h:commandButton value="Submit" action="#{CurrencyManager.currencyConveter()}"/>
+           
+            
+            <h:outputText id="result" value="#{CurrencyManager.result}" />
+            </h:form>
+         </center>   
+    </h:body>
+</html>
+
